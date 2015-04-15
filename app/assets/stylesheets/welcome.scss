@@ -1,3 +1,64 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  color: #FCF7F6;
+}
+
+.center {
+  display: block;
+  text-align: center;
+}
+
+header {
+  background: #F06A4B;
+  height: 100vh;
+  width: 100%;
+}
+/*
+.fat-line {
+  z-index: 5;
+  position: absolute;
+  width: 10%;
+  margin-left: 75%;
+
+  height: 100%;
+  background: #77716F;
+}
+
+.med-line {
+  position: absolute;
+  width: 100%;
+  margin-top: 800px;
+  height: 50px;
+  background: #FFEDA7;
+}
+
+.sm-line {
+  position: absolute;
+  margin-top: 150px;
+  z-index: 20;
+  width: 0;
+  height: 0;
+  border-left: 450px solid transparent;
+  border-right: 400px solid transparent;
+  border-top: 80px solid #7BA5C7;
+
+  -moz-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+
+}
+
+*/
+
+section.bio {
+  background: #7BA5C7;
+  height: 100vh;
+  min-height: 400px;
+  width: 100%;
+}
+
+section.
