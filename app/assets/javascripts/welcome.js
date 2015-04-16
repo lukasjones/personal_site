@@ -10,7 +10,7 @@ $(document).ready(function(){
     console.log($(divToScrollTo).offset().top);
       $('html, body').animate({
           scrollTop: $(divToScrollTo).offset().top
-      }, 2000);
+      }, 1000);
   });
 
 })
