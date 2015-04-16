@@ -11,6 +11,22 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-size: 4em;
+}
+
+h1, h4 {
+  font-family: 'Poiret One', cursive;
+}
+
+img.center {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border-radius: 50%;
+  margin-top: 20vh;
+}
+
 header {
   position: relative;
   background: #F06A4B;
@@ -36,6 +52,9 @@ img.nav-circle:hover {
   background: rgba(255,255,255,0.5);
 }
 
+/*************BIO SECTION STYLES****************/
+
+
 section#bio {
   position: absolute;
   background: #7BA5C7;
@@ -45,15 +64,45 @@ section#bio {
 }
 
 
-/*
+/*************PORTFOLIO SECTION STYLES****************/
+
 section#portfolio {
+  margin-top: 100vh;
   position: relative;
-  background: #FCF7F6;
+  background: #FFEDA7;
   height: 100vh;
   min-height: 400px;
   width: 100%;
 }
-*/
+
+
+
+/**************CONTACT SECTION STYLES****************/
+
+section#contact {
+  /*margin-top: 100vh;*/
+  position: absolute;
+  background: #77716F;
+  height: 100vh;
+  min-height: 400px;
+  width: 100%;
+}
+
+.contact {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  margin: auto;
+}
+
+
+.contact-top {
+  margin-top: 20vh;
+}
+
+
+
+
 /*
 .fat-line {
   z-index: 5;
