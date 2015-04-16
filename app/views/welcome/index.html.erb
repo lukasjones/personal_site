@@ -116,8 +116,13 @@
   <h1 class="center">
     Contact Me
   </h1>
-
-        <form action="MAILTO:joneslukas21@gmail.com" method="post" class="form-horizontal">
+  <%= form_for :welcome_mail_path do |f| %>
+    <%= f.text_field :email %>
+    <%= f.text_area :content %>
+    <%= f.submit "submit" %>
+  <% end %>
+<!--
+        <form action="welcome/mail" method="post" class="form-horizontal">
           <div class="contact contact-top">
             <input type="email" class="form-control" id="inputEmail3" placeholder="Email"/>
           </div>
@@ -128,5 +133,5 @@
           <div class="contact">
             <button type="submit" class="btn btn-default">Send</button>
           </div>
-        </form>
+        </form> -->
 </section>
