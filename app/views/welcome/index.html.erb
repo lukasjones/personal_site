@@ -116,9 +116,8 @@
   <h1 class="center">
     Contact Me
   </h1>
-  <%= form_for :welcome_mail_path do |f| %>
+  <%= form_for @contact do |f| %>
     <%= f.text_field :email %>
-    <%= f.text_area :content %>
     <%= f.submit "submit" %>
   <% end %>
 <!--

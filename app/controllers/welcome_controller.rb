@@ -1,11 +1,9 @@
 class WelcomeController < ApplicationController
   def index
+    @contact = Contact.new
   end
 
 
 
-  def mail
-    p params
-    # UserMailer.contact_email()
-  end
+
 end

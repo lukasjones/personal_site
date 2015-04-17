@@ -1,14 +1,16 @@
 Rails.application.configure do
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
-  }
+  # config.action_mailer.smtp_settings = {
+  #   address: "http://127.0.0.1:3000/",
+  #   port: 587,
+  #   domain: "gmail.com",
+  #   authentication: "plain",
+  #   enable_starttls_auto: true,
+  #   user_name: "joneslukas21",
+  #   password: "Guitar?12"
+  # }
+
+
 
   # Settings specified here will take precedence over those in config/application.rb.
 
