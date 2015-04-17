@@ -118,6 +118,7 @@
   </h1>
   <%= form_for @contact do |f| %>
     <%= f.text_field :email %>
+    <%= f.text_area :content %>
     <%= f.submit "submit" %>
   <% end %>
 <!--
