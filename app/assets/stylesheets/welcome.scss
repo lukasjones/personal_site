@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/************GENERAL STYLES*******************/
+
 body {
   color: #FCF7F6;
 }
@@ -15,10 +17,6 @@ a {
   text-align: center;
 }
 
-.vertical-center {
-  margin-top: 30vh;
-}
-
 h1 {
   font-size: 4em;
 }
@@ -27,28 +25,13 @@ h1, h4 {
   font-family: 'Poiret One', cursive;
 }
 
-img.center {
-  width: 200px;
-  height: 200px;
-  margin: auto;
-  border-radius: 50%;
-  margin-top: 20vh;
-}
-
-header {
-  position: relative;
-  background: #F06A4B;
-  height: 100vh;
-  width: 100%;
-}
-
 img.nav-circle {
   margin: auto;
   position: absolute;
   display: block;
   border: 2px solid white;
   border-radius: 50%;
-  bottom: 10px;
+  bottom: 20px;
   left: 0;
   right: 0;
   /*text-align: center;*/
@@ -62,9 +45,24 @@ img.nav-circle:hover {
 
 /*************BIO SECTION STYLES****************/
 
+header {
+  position: relative;
+  background: #F06A4B;
+  height: 100vh;
+  width: 100%;
+}
+
 ul, li {
   padding: 0;
   margin: 0;
+}
+
+img.center {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
+  margin-top: 20vh;
 }
 
 section#bio {
@@ -101,7 +99,8 @@ section#portfolio {
 .box {
   width: 250px;
   height: 130px;
-  background: #F06A4B;
+  background: #794539;
+  color: white;
   margin: auto;
   -webkit-transition: color 0.75s, background 0.75s;
   transition: color 0.75s, background 0.75s;

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'welcome/index'
+  get 'welcome/projects'
 
   get 'blogs/index'
   get 'welcome/mail'

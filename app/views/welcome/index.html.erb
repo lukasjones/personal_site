@@ -116,22 +116,17 @@
   <h1 class="center">
     Contact Me
   </h1>
-  <%= form_for @contact do |f| %>
-    <%= f.text_field :email %>
-    <%= f.text_area :content %>
-    <%= f.submit "submit" %>
-  <% end %>
-<!--
-        <form action="welcome/mail" method="post" class="form-horizontal">
-          <div class="contact contact-top">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email"/>
-          </div>
 
-          <div class="contact">
-            <textarea class="form-control" rows="9" placeholder="Say Hi!"></textarea>
-          </div>
-          <div class="contact">
-            <button type="submit" class="btn btn-default">Send</button>
-          </div>
-        </form> -->
+  <%= form_for @contact, :html => {:class => "form-horizontal"} do |f| %>
+    <div class="contact contact-top">
+      <%= f.text_field :email, :class => "form-control", :placeholder => "Your Email" %>
+    </div>
+    <div class="contact">
+      <%= f.text_area :content, :class => "form-control", :rows => '9', :placeholder => "Say hello!" %>
+    </div>
+    <div class="contact">
+      <%= f.submit "submit", :class => "btn btn-default" %>
+    </div>
+  <% end %>
+
 </section>

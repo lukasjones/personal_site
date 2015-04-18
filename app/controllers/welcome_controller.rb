@@ -3,6 +3,9 @@ class WelcomeController < ApplicationController
     @contact = Contact.new
   end
 
+  def projects
+
+  end
 
 
 
