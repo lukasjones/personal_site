@@ -8,10 +8,31 @@ body {
 }
 
 .project-box {
-  width: 250px;
-  height: 250px;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  padding-bottom: 80%;
   background: #FCF7F6;
   color: black;
   font-size: 1.5em;
+  margin-top: 40px !important;
 }
 
+.ucw {
+  background-image: image-url('ucw.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.lps {
+  background-image: image-url('lps.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+
+h1.p-up {
+  padding-top: 20px;
+}
