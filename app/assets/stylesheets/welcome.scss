@@ -89,8 +89,9 @@ ul.skills li {
 
 /***********PORTFOLIO/BLOG SECTION STYLES**************/
 
-section#portfolio {
+section#portfolio-blog {
   margin-top: 100vh;
+  padding-top: 100px;
   position: relative;
   background: #FFEDA7;
   height: 100vh;
@@ -98,13 +99,13 @@ section#portfolio {
   width: 100%;
 }
 
-#portfolio h1 {
+#portfolio-blog h1 {
   color: black;
 }
 
 .box {
   width: 250px;
-  height: 130px;
+  height: 200px;
   background: #794539;
   color: white;
   margin: auto;
