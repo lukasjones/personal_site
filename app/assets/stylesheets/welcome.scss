@@ -49,7 +49,11 @@ img.nav-circle:hover {
   background: rgba(255,255,255,0.5);
 }
 
-/*************BIO SECTION STYLES****************/
+/*************PICTURE SECTION STYLES****************/
+
+.padded {
+  padding: 50px;
+}
 
 header {
   position: relative;
@@ -57,6 +61,9 @@ header {
   height: 100vh;
   width: 100%;
 }
+
+/*************BIO SECTION STYLES****************/
+
 
 ul, li {
   padding: 0;
@@ -74,7 +81,7 @@ img.center {
 section#bio {
   position: absolute;
   background: #7BA5C7;
-  height: 100vh;
+  height: 120vh;
   min-height: 400px;
   width: 100%;
 }
@@ -90,8 +97,8 @@ ul.skills li {
 /***********PORTFOLIO/BLOG SECTION STYLES**************/
 
 section#portfolio-blog {
-  margin-top: 100vh;
-  padding-top: 100px;
+  margin-top: 120vh;
+  padding-top: 50px;
   position: relative;
   background: #FFEDA7;
   height: 100vh;
