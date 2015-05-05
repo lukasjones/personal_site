@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :comments, only: [:index]
 
   get '/sign_in' => "users#sign_in"
-
   post '/sign_in' => "users#p_sign_in"
 
 
