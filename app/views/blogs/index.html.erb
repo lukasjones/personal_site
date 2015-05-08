@@ -9,22 +9,34 @@
     </div>  <!-- end row div -->
 
     <div class="row">
-      <div class="col-lg-2 col-md-2 col-sm-12">
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
         <aside>
           <p>Recent</p>
-          <ul>
-            <li><a href="#">First Blog</a></li>
-            <li><a href="#">Second Blog</a></li>
-            <li><a href="#">Third Blog</a></li>
-            <li><a href="#">Fourth Blog</a></li>
-            <li><a href="#">Fifth Blog</a></li>
+          <ul class="blog-ul">
+            <% @blogs.each do |blog| %>
+              <li id="<%= blog.id %>"><a href="#"><%= blog.title %></a></li>
+            <% end %>
           </ul>
         </aside>
       </div>
-      <div class="col-lg-10 col-md-10 col-sm-12">
-
+      <div class="col-lg-10 col-md-10 col-sm-9">
+        <h3 class="blog-title"><%= @blogs.first.title %></h3>
+        <p class="blog-content"><%= @blogs.first.content.gsub(/\n/, '<br>') %></p>
       </div>
     </div>
+
+
+    <% if session[:id] %>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <%= form_for new_blog_path do |f| %>
+            <%= f.text_field :title, :style => "width: 100%;", placeholder: "Title" %><br>
+            <%= f.text_area :content, :rows => "20", :cols => "100", placeholder: "content" %>
+            <%= f.submit  :Submit, :class => "btn" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 
   </div> <!-- end container div -->
 </div> <!-- end blog div -->
