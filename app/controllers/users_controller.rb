@@ -15,4 +15,9 @@ class UsersController < ApplicationController
 
   end
 
+  def sign_out
+    session[:id] = nil
+    redirect_to root_path
+  end
+
 end

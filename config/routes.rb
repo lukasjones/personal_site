@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get 'welcome/index'
   get 'welcome/projects'
 
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/sign_in' => "users#sign_in"
   post '/sign_in' => "users#p_sign_in"
+  get '/sign_out' => "users#sign_out"
 
 
 
