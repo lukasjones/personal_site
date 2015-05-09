@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   def show
     blog = Blog.find(params[:id])
 
-    render json: blog
+    render json: { title: blog.title, content: blog.content, created_at: blog.content.to_date }
   end
 
   def create

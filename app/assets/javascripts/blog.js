@@ -15,6 +15,7 @@ $(document).ready(function(){
       console.log(response);
       $(".blog-title").text(response.title);
       $(".blog-content").html(response.content);
+      $(".blog-date").html(response.created_at);
 
     })
     .fail(function(){

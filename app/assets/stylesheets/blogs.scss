@@ -1,3 +1,25 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.blog-content {
+  clear: left;
+}
+
+.blog-title, .blog-date {
+  margin: 0;
+  padding: 0;
+}
+
+.blog-title {
+  margin-bottom: 40px;
+}
+
+.blog-head-title {
+  padding: 60px;
+}
+
+
+
+
