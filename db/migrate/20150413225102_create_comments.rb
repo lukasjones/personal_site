@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.string   :name
       t.string   :content
 
+      t.integer  :blog_id
       t.timestamps null: false
     end
   end

@@ -26,6 +26,13 @@
         <p class="blog-content pull-left"><%= @blogs.first.content.gsub(/\n/, '<br>') %></p>
       </div>
     </div>
+    <div class="row">
+      <% if session[:id] === nil %>
+
+        <%= form_for  %>
+
+      <% end %>
+    </div>
 
 
     <% if session[:id] %>
@@ -39,6 +46,8 @@
         </div>
       </div>
     <% end %>
+
+
 
   </div> <!-- end container div -->
 </div> <!-- end blog div -->
