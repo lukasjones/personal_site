@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :contacts, only: [:new, :create]
 
-  resources :comments, only: [:index]
   resources :blogs
+  resources :comments, only: [:create]
 
   get '/sign_in' => "users#sign_in"
   post '/sign_in' => "users#p_sign_in"

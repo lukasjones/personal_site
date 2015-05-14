@@ -5,8 +5,10 @@ class BlogsController < ApplicationController
 
   def show
     blog = Blog.find(params[:id])
+    comments = blog.comments
+    session[:blog_id] = blog.id
 
-    render json: { title: blog.title, content: blog.content, created_at: blog.content.to_date }
+    render json: { title: blog.title, content: blog.content, created_at: blog.created_at.to_date, comments: comments }
   end
 
   def create

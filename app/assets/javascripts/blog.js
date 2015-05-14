@@ -17,9 +17,16 @@ $(document).ready(function(){
       $(".blog-content").html(response.content);
       $(".blog-date").html(response.created_at);
 
+      $(".comment_list").html("");
+
+      for (var i = 0; i < response.comments.length; i++) {
+        $(".comment_list").append("<li><h3>" + response.comments[i].name + "</h3><p>" + response.comments[i].content + "</p></li>")
+        console.log(response.comments[i]);
+      }
+
     })
     .fail(function(){
-      console.log("fail")
+      console.log("you fail")
     })
   })
 
