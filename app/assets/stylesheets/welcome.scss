@@ -58,7 +58,7 @@ img.nav-circle:hover {
 header {
   position: relative;
   background: #F06A4B;
-  height: 100vh;
+  height: 600px;
   width: 100%;
 }
 
@@ -81,7 +81,7 @@ img.center {
 section#bio {
   position: absolute;
   background: #7BA5C7;
-  height: 120vh;
+  height: 700px;
   min-height: 400px;
   width: 100%;
 }
@@ -97,11 +97,11 @@ ul.skills li {
 /***********PORTFOLIO/BLOG SECTION STYLES**************/
 
 section#portfolio-blog {
-  margin-top: 120vh;
+  margin-top: 700px;
   padding-top: 50px;
   position: relative;
   background: #FFEDA7;
-  height: 100vh;
+  height: 700px;
   min-height: 400px;
   width: 100%;
 }
@@ -138,7 +138,7 @@ section#contact {
   /*margin-top: 100vh;*/
   position: absolute;
   background: #77716F;
-  height: 100vh;
+  height: 700px;
   min-height: 400px;
   width: 100%;
 }

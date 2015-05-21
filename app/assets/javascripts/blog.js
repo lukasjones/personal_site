@@ -20,8 +20,7 @@ $(document).ready(function(){
       $(".comment_list").html("");
 
       for (var i = 0; i < response.comments.length; i++) {
-        $(".comment_list").append("<li><h3>" + response.comments[i].name + "</h3><p>" + response.comments[i].content + "</p></li>")
-        console.log(response.comments[i]);
+        $(".comment_list").append("<li style='background: grey;'><h3>" + response.comments[i].name + "</h3><h5>" + response.comments[i].created_at + "</h5><p>" + response.comments[i].content + "</p></li>")
       }
 
     })
