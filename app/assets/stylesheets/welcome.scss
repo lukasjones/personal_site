@@ -58,8 +58,28 @@ img.nav-circle:hover {
 header {
   position: relative;
   background: #F06A4B;
-  height: 600px;
+  height: 100vh;
   width: 100%;
+}
+
+.horizontal-nav {
+  text-align: center;
+}
+
+.horizontal-nav li {
+  display: inline-block;
+  padding: 20px;
+}
+
+
+
+.horizontal-nav li a {
+  color: white;
+}
+
+.horizontal-nav li a:hover {
+  color: gray;
+
 }
 
 /*************BIO SECTION STYLES****************/
@@ -75,33 +95,41 @@ img.center {
   height: 200px;
   margin: auto;
   border-radius: 50%;
-  margin-top: 20vh;
+  margin-top: 15vh;
 }
 
 section#bio {
   position: absolute;
   background: #7BA5C7;
-  height: 700px;
-  min-height: 400px;
+  min-height: 100vh;
   width: 100%;
 }
 
-ul.skills {
-  list-style-type: none;
+#bio h1 {
+  padding: 20px;
 }
 
-ul.skills li {
-  font-size: 1.6em;
+.about-me-p {
+  font-size: 1.2em;
+  float: left;
+  padding: 0;
+  margin: 0;
 }
+
+.skill {
+  padding: 5px;
+}
+
+
 
 /***********PORTFOLIO/BLOG SECTION STYLES**************/
 
 section#portfolio-blog {
-  margin-top: 700px;
+  margin-top: 100vh;
   padding-top: 50px;
   position: relative;
   background: #FFEDA7;
-  height: 700px;
+  height: 100vh;
   min-height: 400px;
   width: 100%;
 }
@@ -132,19 +160,20 @@ section#portfolio-blog {
 
 
 
+
 /**************CONTACT SECTION STYLES****************/
 
 section#contact {
   /*margin-top: 100vh;*/
   position: absolute;
   background: #77716F;
-  height: 700px;
+  height: 100vh;
   min-height: 400px;
   width: 100%;
 }
 
 .contact {
-  width: 80%;
+  /*width: 80%;*/
   margin: 10px;
   padding: 10px;
   margin: auto;

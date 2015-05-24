@@ -3,6 +3,14 @@
 
   <div class="container">
 
+    <nav class="horizontal-nav">
+      <ul>
+        <li><a href="#bio" class="scroll">About Me</a></li>
+        <li><a href="#portfolio-blog" class="scroll">Portfolio/Blog</a></li>
+        <li><a href="#contact" class="scroll">Contact Me</a></li>
+      </ul>
+    </nav>
+
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <%= image_tag "smaller.jpg", :class => "center" %>
@@ -35,7 +43,7 @@
   <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-12"></div>
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <p class="center">
+      <p class="about-me-p">
         I'm a full stack web developer with a passion for writing sustainable code.  I love building websites and apps from the ground up.  In my spare time I like to dive into new programming languages, read other peoples code and rock climb!
       </p>
     </div>
@@ -44,23 +52,15 @@
     Skills
   </h1>
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <ul class="skills center padded">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-        <li>Ruby</li>
-      </ul>
+    <div class="col-lg-3 col-md-3 col-sm-12"></div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <%= image_tag "html.jpg", :class => "skill" %>
+      <%= image_tag "css3.png", :class => "skill" %>
+      <%= image_tag "JavaScript.png", :class => "skill" %>
+      <%= image_tag "Git-Icon.png", :class => "skill" %>
+      <%= image_tag "rails-icon.png", :class => "skill" %>
+      <%= image_tag "jquery-icon.png", :class => "skill" %>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <ul class="skills center padded">
-        <li>Rails</li>
-        <li>Sinatra</li>
-        <li>GIT</li>
-        <li>jQuery</li>
-      </ul>
-    </div>
-
   </div>
 
 
@@ -75,7 +75,9 @@
 
 
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12">
+
+    <div class="col-lg-3 col-md-3 col-sm-12"></div>
+    <div class="col-lg-3 col-md-3 col-sm-12">
       <%= link_to welcome_projects_path do %>
         <h1 class="center">
           Portfolio
@@ -88,11 +90,11 @@
 
 
 
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <h1 class="center">
-        Blog
-      </h1>
+    <div class="col-lg-3 col-md-3 col-sm-12">
       <%= link_to blogs_path do %>
+        <h1 class="center">
+          Blog
+        </h1>
         <div class="box center">
           <p>Blog Posts</p>
         </div>
@@ -112,18 +114,22 @@
   <h1 class="center">
     Contact Me
   </h1>
+  
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-  <%= form_for @contact, :html => {:class => "form-horizontal"} do |f| %>
-    <div class="contact contact-top">
-      <%= f.text_field :email, :class => "form-control", :placeholder => "Your Email" %>
-    </div>
-    <div class="contact">
-      <%= f.text_area :content, :class => "form-control", :rows => '9', :placeholder => "Say hello!" %>
-    </div>
-    <div class="contact">
-      <%= f.submit "submit", :class => "btn btn-default" %>
-    </div>
-  <% end %>
+    <%= form_for @contact, :html => {:class => "form-horizontal"} do |f| %>
+      <div class="contact contact-top">
+        <%= f.text_field :email, :class => "form-control", :placeholder => "Your Email" %>
+      </div>
+      <div class="contact">
+        <%= f.text_area :content, :class => "form-control", :rows => '9', :placeholder => "Say hello!" %>
+      </div>
+      <div class="contact">
+        <%= f.submit "submit", :class => "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
 
 </section>
 
