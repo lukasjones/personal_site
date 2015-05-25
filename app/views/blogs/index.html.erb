@@ -25,9 +25,9 @@
         </aside>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-9">
-        <h3 class="blog-title pull-left" id="<%= @blogs.first.id %>"><%= @blogs.first.title %></h3>
-        <h4 class="blog-date pull-right"><%= @blogs.first.created_at.to_date %></h4>
-        <p class="blog-content pull-left"><%= @blogs.first.content.gsub(/\n/, '<br>') %></p>
+        <h3 class="blog-title pull-left" id="<%= @blogs.first.id %>"><%= @blogs.last.title %></h3>
+        <h4 class="blog-date pull-right"><%= @blogs.last.created_at.to_date %></h4>
+        <p class="blog-content pull-left"><%= @blogs.last.content.gsub(/\n/, '<br>') %></p>
       </div>
     </div>
     <div class="row">
@@ -45,7 +45,7 @@
         <% end %>
 
         <ul class="comment_list">
-          <% @blogs.first.comments.each do |comment| %>
+          <% @blogs.last.comments.each do |comment| %>
 
             <li>
               <h3><%= comment.name %></h3>

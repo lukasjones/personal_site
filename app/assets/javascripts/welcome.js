@@ -13,4 +13,9 @@ $(document).ready(function(){
       }, 1000);
   });
 
+  $(".carousel").carousel();
+
+  var blah = $(".pb-content").text();
+  $(".pb-content").html(blah);
+
 })

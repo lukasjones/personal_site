@@ -76,25 +76,64 @@
 
   <div class="row">
 
-    <div class="col-lg-3 col-md-3 col-sm-12"></div>
-    <div class="col-lg-3 col-md-3 col-sm-12">
+    <div class="col-lg-3 col-md-3 col-sm-3"></div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
       <%= link_to welcome_projects_path do %>
         <h1 class="center">
           Portfolio
         </h1>
-        
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+         
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <%= image_tag("ucw.png", :class => "c-img") %>
+            </div>
+
+            <div class="item">
+              <%= image_tag("lps.png", :class => "c-img") %>
+            </div>
+
+            <div class="item">
+              <%= image_tag("stn.png", :class => "c-img") %>
+            </div>
+
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
       <% end %>
     </div>
 
 
 
-    <div class="col-lg-3 col-md-3 col-sm-12">
-      <%= link_to blogs_path do %>
+    <div class="col-lg-3 col-md-3 col-sm-3">
         <h1 class="center">
           Blog
         </h1>
+        <h3 class="pb-title">
+          <%= @recent_blog_post.title %>
+        </h3>
+        <br>
+        <p class="pb-content">
+          <%= truncate(@recent_blog_post.content, length: 100) %>
+        </p>
+        <p class="pb-anchor">
+          <%= link_to blogs_path do %>
+            Read More &#8594; 
+          <% end %>
+        </p>
 
-      <% end %>
     </div>
   </div>
 
