@@ -15,3 +15,5 @@ ActionMailer::Base.smtp_settings = {
 }
 
 ActionMailer::Base.raise_delivery_errors = true
+
+ActiveRecord::Base.logger.level = Logger::DEBUG
