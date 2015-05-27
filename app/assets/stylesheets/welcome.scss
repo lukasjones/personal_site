@@ -125,17 +125,18 @@ section#bio {
 
 /***********PORTFOLIO/BLOG SECTION STYLES**************/
 
-section#portfolio-blog {
+section#portfolio {
   margin-top: 100vh;
   padding-top: 50px;
   position: relative;
-  background: #FFEDA7;
+  background: #77716F;
+
   height: 100vh;
   min-height: 400px;
   width: 100%;
 }
 
-#portfolio-blog h1 {
+#portfolio h1 {
   color: black;
   padding-bottom: 30px;
 }
@@ -145,14 +146,43 @@ section#portfolio-blog {
   margin: auto;
 }
 
-.pb-content, .pb-title, .pb-anchor {
-  margin: auto;
-  width: 200px;
+
+
+
+
+
+
+/**************BLOG SECTION STYLES****************/
+
+
+
+section#blog {
+  padding-top: 50px;
+  position: relative;
+  background: #FFEDA7;
+  height: 100vh;
+  min-height: 400px;
+  width: 100%;
+}
+
+#blog h1 {
   color: black;
 }
 
+/*#blog p {
+  padding: 0px 10px;
+}
+*/
+.pb-content, .pb-title, .pb-anchor {
+  margin: auto;
+  color: black;
+  padding: 0 10px;
+}
 
-
+.pb-content, .pb-anchor {
+  width: 100%;
+}
+/**/
 
 
 /**************CONTACT SECTION STYLES****************/
@@ -160,7 +190,8 @@ section#portfolio-blog {
 section#contact {
   /*margin-top: 100vh;*/
   position: absolute;
-  background: #77716F;
+  background: #F06A4B;
+
   height: 100vh;
   min-height: 400px;
   width: 100%;
