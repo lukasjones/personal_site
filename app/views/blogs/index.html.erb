@@ -40,7 +40,7 @@
           <%= form_for(Comment.new) do |f| %>
             <%= f.text_field :name, :placeholder => "Your Name (optional)" %>
             <%= f.text_area  :content, :placeholder => "Comment" %>
-            <%= f.submit     :Submit, :class => "btn" %>
+            <%= f.submit     :"Comment", :class => "btn" %>
           <% end %>
         <% end %>
 

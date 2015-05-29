@@ -123,7 +123,7 @@ section#bio {
 
 
 
-/***********PORTFOLIO/BLOG SECTION STYLES**************/
+/***********PORTFOLIO SECTION STYLES**************/
 
 section#portfolio {
   margin-top: 100vh;
@@ -142,10 +142,13 @@ section#portfolio {
 }
 
 .c-img {
-  width: 300px;
+  width: 100%;
   margin: auto;
 }
 
+#myCarousel {
+  margin: 10px;
+}
 
 
 
@@ -157,7 +160,6 @@ section#portfolio {
 
 
 section#blog {
-  padding-top: 50px;
   position: relative;
   background: #FFEDA7;
   height: 100vh;
@@ -167,6 +169,8 @@ section#blog {
 
 #blog h1 {
   color: black;
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 /*#blog p {
