@@ -1,6 +1,5 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.all
   end
 
   def show
@@ -10,6 +9,11 @@ class BlogsController < ApplicationController
 
     render json: { title: blog.title, content: blog.content, created_at: blog.created_at.to_date, comments: comments }
   end
+
+  def all
+    render json: Blog.all
+  end
+
 
   def create
     prms = params["/blogs/new"]
