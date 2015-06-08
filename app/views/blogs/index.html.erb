@@ -1,80 +1,50 @@
-<div class="blog">
-  <div class="container">
-    <%= link_to root_path + "#blog" do %>
-      <button><< Back</button>
-    <% end %>
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <h1 class="center p-up blog-head-title">
-          Blog
-        </h1>
-      </div>
-    </div>  <!-- end row div -->
+<%= react_component("Blog") %>
 
-    <div class="row">
-      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+<div id="layout">
+    <!-- Menu toggle -->
+    
 
-      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
-        <aside>
-          <p>Recent</p>
-          <ul class="blog-ul">
-            <% @blogs.each do |blog| %>
-              <li id="<%= blog.id %>"><a href="#"><%= blog.title %></a></li>
-            <% end %>
-          </ul>
-        </aside>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-9">
-        <h3 class="blog-title pull-left" id="<%= @blogs.first.id %>"><%= @blogs.last.title %></h3>
-        <h4 class="blog-date pull-right"><%= @blogs.last.created_at.to_date %></h4>
-        <p class="blog-content pull-left"><%= @blogs.last.content.gsub(/\n/, '<br>') %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
-
-      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12"></div>
-
-      <div class="col-lg-6 col-md-6 col-sm-9">
-
-        <ul class="comment_list">
-          <% @blogs.last.comments.each do |comment| %>
-
-            <li>
-              <h3><%= comment.name %></h3>
-              <h5><%= comment.created_at.to_date %></h5>
-              <p><%= comment.content %></p>
-            </li>
-
-          <% end %>
-        </ul>
-
-
-        <% if session[:id] === nil %>
-          <%= form_for(Comment.new) do |f| %>
-            <%= f.text_field :name, :placeholder => "Your Name (optional)" %>
-            <%= f.text_area  :content, :placeholder => "Comment" %>
-            <%= f.submit     :"Comment", :class => "btn" %>
-          <% end %>
-        <% end %>
-        
-      </div>
-    </div>
-
-
-    <% if session[:id] %>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <%= form_for new_blog_path do |f| %>
-            <%= f.text_field :title, :style => "width: 100%;", placeholder: "Title" %><br>
-            <%= f.text_area :content, :rows => "20", :cols => "100", placeholder: "content" %>
-            <%= f.submit  :Submit, :class => "btn" %>
-          <% end %>
+    <div id="main">
+        <div class="header">
+            <h1>Page Title</h1>
+            <h2>A subtitle for your page goes here</h2>
         </div>
-      </div>
-    <% end %>
+
+        <div class="content">
+            <h2 class="content-subhead">How to use this layout</h2>
+            <p>
+                To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/css/layouts/side-menu.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
+            </p>
+
+            <h2 class="content-subhead">Now Let's Speak Some Latin</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <div class="pure-g">
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm6.staticflickr.com/5456/9121446012_c1640e42d0.jpg" alt="T-Shirt Store">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm8.staticflickr.com/7357/9086701425_fda3024927.jpg" alt="Mountain">
+                </div>
+            </div>
+
+            <h2 class="content-subhead">Try Resizing your Browser</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+</div>
 
 
 
-  </div> <!-- end container div -->
-</div> <!-- end blog div -->
+
+
