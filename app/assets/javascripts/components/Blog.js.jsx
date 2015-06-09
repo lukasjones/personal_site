@@ -1,4 +1,7 @@
 var Blog = React.createClass({
+	changeBlog: function(blogId){
+		this.setState({currentBlogId: blogId})
+	},
 	loadBlogs: function(){
 		$.ajax({
 			url: "/blogs/all",
@@ -19,13 +22,14 @@ var Blog = React.createClass({
 		this.loadBlogs();
 	},
 	render: function(){
+		var self = this;
 		var blogs = this.state.blogs;
 		
 		return (
 			<div className="wrap">
 				<div id="layout">
 					<div id="main">
-							<NavBar blogs={this.state.blogs} currentBlogId={this.state.currentBlogId}/>
+							<NavBar blogSelf={self} blogs={this.state.blogs} currentBlogId={this.state.currentBlogId}/>
 					</div>
 				</div>
 
@@ -41,8 +45,9 @@ var Blog = React.createClass({
 
 var NavBar = React.createClass({
 	render: function(){
-		console.log(this.props.currentBlogId)
-		var currentBlogId = this.props.currentBlogId
+		console.log(this.props.currentBlogId);
+		var currentBlogId = this.props.currentBlogId;
+		var blogSelf = this.props.blogSelf;
 		return (
 			<div>
 				<a href="#menu" id="menuLink" className="menu-link">
@@ -63,8 +68,8 @@ var NavBar = React.createClass({
 			        					)
 			        				} else {
 				        				return (
-				        					<NavItem href={blog.id} >{blog.title}</NavItem>
-				        				)
+				        					<NavItem blogSelf={blogSelf} href={blog.id}>{blog.title}</NavItem>
+				        				);
 			        				}
 				        		} 
 		        			})
@@ -78,9 +83,13 @@ var NavBar = React.createClass({
 });
 
 var NavItem = React.createClass({
+	changeBlog: function(event){
+		event.preventDefault();
+		this.props.blogSelf.changeBlog(this.props.href - 1);
+	},
 	render: function(){
 		return (
-			<li className="pure-menu-item"><a href={this.props.href} className="pure-menu-link">{this.props.children}</a></li>
+			<li className="pure-menu-item"><a href={this.props.href} onClick={this.changeBlog} className="pure-menu-link">{this.props.children}</a></li>
 		)
 	}
 })
@@ -101,21 +110,22 @@ var BlogPost = React.createClass({
 	render: function(){
 		var currentBlogId = this.props.currentBlogId;
 		var currentBlog = this.props.blogs[currentBlogId]
+		var date = currentBlogId ? currentBlog.created_at : "date"
+		var title = currentBlogId ? currentBlog.title : "title"
+		var content = currentBlogId ? currentBlog.content : "title"
 			return (
 				// <h1 className="blog-title">{this.props.title}</h1>
 				// <span className="blog-date">{this.props.date}</span>
 				// <p className="blog-content">{this.props.content}</p>
 				<div id="main">
 				  <div className="header">
-		        <h1>{" " || currentBlog.title}</h1>
-		        <h2>{" " || currentBlog.created_at}</h2>
+		        <h1>{title}</h1>
+		        <h2>{date}</h2>
 			    </div>
 
 			    <div className="content">
 		        <h2 className="content-subhead">Post Written By Lukas Jones</h2>
-		        <p>
-		        	{" " || currentBlog.content}
-		        </p>
+		        <p dangerouslySetInnerHTML={{__html: content}} />
 
 			    </div>
 				</div>
