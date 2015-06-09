@@ -24,7 +24,7 @@ var Blog = React.createClass({
 	render: function(){
 		var self = this;
 		var blogs = this.state.blogs;
-		console.log(this.state.currentBlogId);
+		console.log(this.state.blogs);
 
 		return (
 			<div className="wrap">
@@ -111,10 +111,8 @@ var BlogPost = React.createClass({
 		var currentBlogId = this.props.currentBlogId;
 		var currentBlog = this.props.blogs[currentBlogId]
 		
-		var date = currentBlogId !== null ? currentBlog.created_at : "date"
+		var date = currentBlogId !== null ? currentBlog.created_at.match(/\d{4}-\d{2}-\d{2}/).join("") : "date"
 		var title = currentBlogId !== null ? currentBlog.title : "title"
-		console.log(currentBlogId)
-		console.log(title);
 		var content = currentBlogId !== null ? currentBlog.content : "title"
 			return (
 				// <h1 className="blog-title">{this.props.title}</h1>

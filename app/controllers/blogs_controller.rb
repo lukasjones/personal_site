@@ -11,7 +11,8 @@ class BlogsController < ApplicationController
   end
 
   def all
-    render json: Blog.all
+    json_blogs = Blog.all.each{|blog| blog.created_at = blog.created_at.strftime("%B, %d, %Y")}
+    render json: json_blogs
   end
 
 
