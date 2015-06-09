@@ -92,7 +92,11 @@
 
 <section id="contact">
 
-    <%= form_for @contact, :html => {:class => "pure-form"} do |f| %>
+    <button class="ghost-button contact-button">
+      Say Hi!
+    </button>
+
+    <%= form_for @contact, :html => {:class => "pure-form contact-form"} do |f| %>
       <fieldset class="contact contact-top">
         <%= f.text_field :email, :class => "pure-input-1-2", :placeholder => "Your Email" %>
         <%= f.text_area :content, :class => "pure-input-1-2", :rows => '9', :placeholder => "Say hello!" %>

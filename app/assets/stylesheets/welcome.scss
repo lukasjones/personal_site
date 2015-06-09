@@ -207,13 +207,20 @@ section#blog {
 
 section#contact {
   position: absolute;
-  background: #F06A4B;
+  background: white;
   height: 50vh;
   width: 100%;
   text-align: center;
 }
 
 
+.contact-button {
+  margin-top: 10vh;
+}
+
+.contact-form {
+  display: none;
+}
 
 input, textarea {
   color: black;
