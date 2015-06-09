@@ -24,7 +24,8 @@ var Blog = React.createClass({
 	render: function(){
 		var self = this;
 		var blogs = this.state.blogs;
-		
+		console.log(this.state.currentBlogId);
+
 		return (
 			<div className="wrap">
 				<div id="layout">
@@ -45,7 +46,6 @@ var Blog = React.createClass({
 
 var NavBar = React.createClass({
 	render: function(){
-		console.log(this.props.currentBlogId);
 		var currentBlogId = this.props.currentBlogId;
 		var blogSelf = this.props.blogSelf;
 		return (
@@ -110,9 +110,12 @@ var BlogPost = React.createClass({
 	render: function(){
 		var currentBlogId = this.props.currentBlogId;
 		var currentBlog = this.props.blogs[currentBlogId]
-		var date = currentBlogId ? currentBlog.created_at : "date"
-		var title = currentBlogId ? currentBlog.title : "title"
-		var content = currentBlogId ? currentBlog.content : "title"
+		
+		var date = currentBlogId !== null ? currentBlog.created_at : "date"
+		var title = currentBlogId !== null ? currentBlog.title : "title"
+		console.log(currentBlogId)
+		console.log(title);
+		var content = currentBlogId !== null ? currentBlog.content : "title"
 			return (
 				// <h1 className="blog-title">{this.props.title}</h1>
 				// <span className="blog-date">{this.props.date}</span>
