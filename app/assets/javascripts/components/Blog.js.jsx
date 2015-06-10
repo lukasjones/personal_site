@@ -95,10 +95,14 @@ var NavItem = React.createClass({
 })
 
 var SelectedNavItem = React.createClass({
+	doNothing: function(event){
+		event.preventDefault();
+		console.log('that\'s the current blog nard');
+	},
 	render: function(){
 		return (
 			<li className="pure-menu-item" className="menu-item-divided pure-menu-selected">
-			    <a href={this.props.href} className="pure-menu-link">{this.props.children}</a>
+			    <a href={this.props.href} onClick={this.doNothing} className="pure-menu-link">{this.props.children}</a>
 			</li>
 		)
 	}

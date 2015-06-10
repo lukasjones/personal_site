@@ -1,9 +1,7 @@
 
 
 <header>
-
-  <div class="container">
-
+  <div class="opener-overlay">
     <nav class="horizontal-nav">
       <ul>
         <li><a href="#bio" class="scroll">About Me</a></li>
@@ -13,24 +11,15 @@
       </ul>
     </nav>
 
-    <%= image_tag "smaller.jpg", :class => "center" %>
 
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <h1 class="center">Lukas Jones</h1>
-      </div>
-    </div>
+    <h1 class="center">Lukas Jones</h1>
 
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <h4 class="center">Full Stack Developer</h4>
-      </div>
-    </div>
+    <h4 class="center">Full Stack Developer</h4>
 
+    <a class="scroll" href="#bio">
+      <%= image_tag "down_arrow.png", :class => "nav-circle" %>
+    </a>
   </div>
-  <a class="scroll" href="#bio">
-    <%= image_tag "down_arrow.png", :class => "nav-circle" %>
-  </a>
 </header>
 
 <section id="bio">
