@@ -27,7 +27,8 @@ $(document).ready(function(){
       data: messageData,
       dataType: "json" 
     })
-    .success(function(response){
+    .success(function(){
+      console.log("success");
       $(".contact-form").find("input[type='text']").val("");
       $(".contact-form").find("textarea").val("");
       $(".contact-form").slideUp();
@@ -36,14 +37,14 @@ $(document).ready(function(){
       $(".contact-button").text("Message sent!");
       setTimeout(function(){ 
         $(".contact-button").css("color", "#325BB3");
-
         $('.contact-button').fadeOut(1000, function() {
-                $(this).text('Say Hi!').fadeIn(1000);
-            });
+          $(this).text('Say Hi!').fadeIn(1000);
+        });
       }, 3000);
 
     })
     .fail(function(){
+      
       $(".contact-form").find("input[type='text']").val("");
       $(".contact-form").find("textarea").val("");
       $(".contact-form").slideUp();

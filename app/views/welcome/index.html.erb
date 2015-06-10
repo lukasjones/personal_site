@@ -95,7 +95,7 @@
     <button class="ghost-button contact-button">
       Say Hi!
     </button>
-
+<div id="layout">
     <%= form_for @contact, :html => {:class => "pure-form contact-form"} do |f| %>
       <fieldset class="contact contact-top">
         <%= f.text_field :email, :class => "pure-input-1-2", :placeholder => "Your Email" %>
@@ -103,6 +103,7 @@
       </fieldset>
         <%= f.submit "submit", :class => "pure-button pure-input-1-2 pure-button-primary" %>
     <% end %>
+</div>
 
 </section>
 
