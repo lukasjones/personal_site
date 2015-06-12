@@ -32,7 +32,6 @@ img.nav-circle {
   bottom: 20px;
   left: 0;
   right: 0;
-  /*text-align: center;*/
   -webkit-transition: background 0.75s;
     transition: background 0.75s;
 }
@@ -40,7 +39,8 @@ img.nav-circle {
 img.nav-circle:hover {
   background: rgba(255,255,255,0.5);
 }
-  
+
+
 .ghost-button {
   font-size: 1.4em;
   background: transparent;
@@ -86,15 +86,12 @@ header {
   padding: 20px;
 }
 
-
-
 .horizontal-nav li a {
   color: white;
 }
 
 .horizontal-nav li a:hover {
   color: gray;
-
 }
 
 .opener-overlay {
@@ -104,6 +101,19 @@ header {
   background: rgba(255,237,167,0.5);
   bottom: 0;
 }
+
+
+h1.name {
+  padding-top: 25vh;
+  font-size: 4em;
+  color: lightblue;
+}
+
+h4.title {
+  font-size: 1.5em;
+  color: lightblue;
+}
+
 
 /*************BIO SECTION STYLES****************/
 
@@ -235,5 +245,21 @@ section#contact {
 
 input, textarea {
   color: black;
+}
+
+
+@media (max-width: 400px) {
+  h1.name {
+    font-size: 3em;
+  }
+  h4.title {
+    font-size: 1.1em;
+  }
+  
+  .horizontal-nav li {
+    padding: 10px;
+    font-size: 14px;
+  }
+
 }
 
