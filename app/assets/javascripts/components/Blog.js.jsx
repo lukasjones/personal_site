@@ -37,6 +37,7 @@ var Blog = React.createClass({
 				<div id="layout">
 					<div id="main">
 							<BlogPost blogs={this.state.blogs} currentBlogId={this.state.currentBlogId} />
+							<CommentList currentBlogId={this.state.currentBlogId} />
 					</div>
 				</div>
 			</div>
@@ -140,6 +141,29 @@ var BlogPost = React.createClass({
 
 
 var CommentList = React.createClass({
+	getComments: function(){
+		if (this.props.currentBlogId !== null) {
+			var url = "/comments/" + this.props.currentBlogId
+			$.ajax({
+				url: url,
+				type: "get",
+				dataType: "json",
+				success: function(comments){
+					console.log("successfully retrieved comments");
+					this.setState({currentBlogComments: comments});
+				},
+				error: function(){
+					console.log("failed to get comments");
+				}
+			})
+		}
+	},
+	getInitialState: function(){
+		return {currentBlogComments: []};
+	},
+	componentDidMount: function(){
+		this.getComments();
+	},
 	render: function(){
 		return (
 			<div></div>
