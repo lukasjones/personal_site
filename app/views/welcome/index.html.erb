@@ -84,15 +84,11 @@
     <button class="ghost-button contact-button">
       Say Hi!
     </button>
-<div id="layout">
-    <%= form_for @contact, :html => {:class => "pure-form contact-form"} do |f| %>
-      <fieldset class="contact contact-top">
-        <%= f.text_field :email, :class => "pure-input-1-2", :placeholder => "Your Email" %>
-        <%= f.text_area :content, :class => "pure-input-1-2", :rows => '9', :placeholder => "Say hello!" %>
-      </fieldset>
-        <%= f.submit "submit", :class => "pure-button pure-input-1-2 pure-button-primary" %>
+    <%= form_for @contact, :html => {:class => "contact-form"} do |f| %>
+        <%= f.text_field :email, :class => "email-text", :placeholder => "Your Email" %>
+        <%= f.text_area :content, :class => "content-text", :rows => '7', :placeholder => "Say hello!" %>
+        <%= f.submit "submit", :class => "mail-submit" %>
     <% end %>
-</div>
 
 </section>
 

@@ -1,93 +1,104 @@
 <div class="projects">
-  <div class="container">
-    <%= link_to root_path + "#portfolio" do %>
-      <button><< Back</button>
-    <% end %>
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <h1 class="center p-up">
-          Projects
-        </h1>
-      </div>
-    </div>
+  <%= link_to root_path + "#portfolio" do %>
+    <button><< Back</button>
+  <% end %>
+
+  <h1 class="center p-up">
+    Projects
+  </h1>
 
 
 
-    <div class="row">
 
-
-      <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="http://universitycrimewatch.com">
-          <div class="project-box center ucw flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <h3>University Crime Watch</h3>
-                <%= image_tag("ucw.png") %>
-              </div>
-              <div class="back">
-                <h3>University Crime Watch</h3>
-                <p>
-                  This is a web app that provides crime statistics about higher education schools in the United States.
-                </p>
-                <p>
-                  My role in the project was split between populating/dealing with access to the data and finding an elegant way to display it.
-                </p>
-              </div>
-            </div>
+  <div class="boxy-box">
+    <a href="http://universitycrimewatch.com">
+      <div class="project-box center ucw flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <h3>University Crime Watch</h3>
+            <%= image_tag("ucw.png") %>
           </div>
-        </a>
-      </div>
-
-
-
-
-      <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="http://lukasplatforms.herokuapp.com">
-
-          <div class="project-box center ucw flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <h3>Lukas Platforms</h3>
-                <%= image_tag("lps.png") %>
-              </div>
-              <div class="back">
-                <h3>Lukas Platforms</h3>
-                <p>
-                  This was a 2d side scrolling platformer game.  You use arrow keys to move around and try not to fall in the lava!
-                </p>
-              </div>
-            </div>
+          <div class="back">
+            <h3>University Crime Watch</h3>
+            <p>
+              This is a web app that provides crime statistics about higher education schools in the United States.
+            </p>
+            <p>
+              My role in the project was split between populating/dealing with access to the data and finding an elegant way to display it.
+            </p>
           </div>
-        </a>
+        </div>
       </div>
+    </a>
+  </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="https://nepal-relief.herokuapp.com">
 
-          <div class="project-box center ucw flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <h3>See The Need</h3>
-                <%= image_tag("stn.png") %>
-              </div>
-              <div class="back">
-                <h3>Lukas Platforms</h3>
-                <p>
-                  Connecting people who were affected by the earthquake that hit Nepal on April 25, 2015 and people who can provide resources.
-                </p>
-                <p>
-                  The goal is to allow relief centers list their needs (along with urgency) and have donors claim those needs and find relief centers to donate to and discover what items are most needed.
-                </p>
-              </div>
-            </div>
+
+  <div class="boxy-box">
+    <a href="http://lukasplatforms.herokuapp.com">
+
+      <div class="project-box center ucw flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <h3>Lukas Platforms</h3>
+            <%= image_tag("lps.png") %>
           </div>
-        </a>
+          <div class="back">
+            <h3>Lukas Platforms</h3>
+            <p>
+              This was a 2d side scrolling platformer game.  You use arrow keys to move around and try not to fall in the lava!
+            </p>
+          </div>
+        </div>
       </div>
+    </a>
+  </div>
+
+  <div class="boxy-box">
+    <a href="https://nepal-relief.herokuapp.com">
+      <div class="project-box flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <h3>See The Need</h3>
+            <%= image_tag("stn.png") %>
+          </div>
+          <div class="back">
+            <h3>See The Need</h3>
+            <p>
+              Connecting people who were affected by the earthquake that hit Nepal on April 25, 2015 and people who can provide resources.
+            </p>
+            <p>
+              The goal is to allow relief centers list their needs (along with urgency) and have donors claim those needs and find relief centers to donate to and discover what items are most needed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="boxy-box">
+    <a href="https://github.com/rickypchen/boxable">
+      <div class="project-box flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <h3>Boxable</h3>
+            <%= image_tag("#", alt: "Boxable Image Coming soon") %>
+          </div>
+          <div class="back">
+            <h3>Boxable</h3>
+            <p>
+               Boxable is a one stop shop for care packages.  You can customize the items or select from a list of popular arrangements. Once complete paying and sending is all part of the checkout process.
+            </p>
+            <p>
+              This app is built with a Ruby on Rails backend and React on the front end.  Styling is handled with bootstrap mostly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
 
 
-
-    </div>  <!-- end row div -->
-  </div>  <!-- end containter div -->
 </div> <!-- end projects div -->
 
 

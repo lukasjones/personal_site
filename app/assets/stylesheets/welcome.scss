@@ -49,8 +49,6 @@ img.nav-circle:hover {
   margin-top: 40vh;
   width: 200px;
   height: 75px;
-  text-align: center;
-  vertical-align: middle;
   /*background: rgba(119,113,111,0.4);*/
   color: #325BB3;
   -webkit-transition: background 0.75s, color 0.75s;
@@ -105,7 +103,7 @@ header {
 
 h1.name {
   padding-top: 25vh;
-  font-size: 4em;
+  font-size: 5em;
   color: rgb(123,165,199);
   font-weight: lighter;
   text-shadow: -1px 0 rgb(119,113,111), 0 1px rgb(119,113,111), 1px 0 rgb(119,113,111), 0 -1px rgb(119,113,111);
@@ -234,24 +232,44 @@ section#blog {
 section#contact {
   position: absolute;
   background: white;
-  height: 50vh;
+  height: 60vh;
   width: 100%;
-  
 }
 
 
 .contact-button {
-  margin-top: 10vh;
+  margin: 10vh auto 0;
+  display: block;
 }
 
 .contact-form {
   display: none;
-  padding-top: 5vh;
+  padding: 5vh 30px;
+  max-width: 600px;
+  margin: auto;
+
 }
 
-input, textarea {
-  color: black;
+input.email-text, textarea.content-text {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+  border: 1px solid grey;
+
 }
+input.mail-submit {
+  padding: 10px;
+  margin: 10px;
+  background: transparent;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+
+
+/* phone size */ 
 
 
 @media (max-width: 400px) {
@@ -266,6 +284,12 @@ input, textarea {
     padding: 10px;
     font-size: 14px;
   }
+
+  input.email-text, textarea.content-text, input.mail-submit {
+    margin: 2px;
+  }
+
+
 
 }
 
