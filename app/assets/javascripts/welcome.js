@@ -10,7 +10,7 @@ $(document).ready(function(){
     console.log($(divToScrollTo).offset().top);
       $('html, body').animate({
           scrollTop: $(divToScrollTo).offset().top
-      }, 1000);
+      }, 600);
   });
 
   $(".contact-button").on("click", function(){
