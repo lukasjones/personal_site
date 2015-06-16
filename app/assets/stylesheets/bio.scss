@@ -91,3 +91,27 @@ h3.sub-title {
 	padding: 0;
 }
 
+.bio-page footer {
+	margin-top: 40px;
+}
+
+.skill-list {
+	list-style-type: none;
+	max-width: 800px;
+}
+
+.skill-list li {
+	display: inline-block;
+	text-align: center;
+	width: 24%;
+}
+
+@media (max-width: 400px) {
+
+	.skill-list li {
+		font-size: 0.8em;
+		width: 20%;
+		margin: 0 5px;
+	}
+
+}
