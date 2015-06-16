@@ -65,9 +65,9 @@ h3.sub-title {
 
 .skill-bar {
 	display: block;
-	margin: 10px;
+	margin: 5px 0;
 	max-width: 800px;
-	background: black;
+	background: grey;
 	color: white;
 }
 
@@ -87,5 +87,7 @@ h3.sub-title {
 
 .skill-bar .description {
 	display: none;
+	margin: 0;
+	padding: 0;
 }
 
