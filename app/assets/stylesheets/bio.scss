@@ -62,3 +62,30 @@ h3.sub-title {
 .bio-page a:hover {
 	color: purple;
 }
+
+.skill-bar {
+	display: block;
+	margin: 10px;
+	max-width: 800px;
+	background: black;
+	color: white;
+}
+
+.inner-bar {
+	height: 30px;
+	width: 0px;
+	background: orange;
+	font-size: 1.1em;
+	text-align: right;
+
+}
+
+.inner-bar .text {
+	top: 4px;
+	right: 8px;
+}
+
+.skill-bar .description {
+	display: none;
+}
+
