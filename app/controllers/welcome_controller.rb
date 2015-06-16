@@ -8,6 +8,8 @@ class WelcomeController < ApplicationController
 
   end
 
+  def bio
+  end
 
 
 end

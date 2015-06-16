@@ -1,0 +1,64 @@
+.bio-page {
+	width: 100%;
+	height: 100%;
+	background: #FCF7F6;
+}
+
+.bio-container {
+	max-width: 800px;
+	margin: auto;
+	padding: 4px;
+}
+
+#bio-header {
+	position: relative;
+	background: url("/assets/me_in_forest.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	z-index: 0;
+}
+
+#bio-header-overlay {
+	position: relative;
+	background: rgba(240,106,75, 0.6);
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+}
+
+h1#bio-title {
+	width: 280px;
+	color: rgb(252,247,246);
+ 	font-size: 4em;
+	font-weight: lighter;
+	padding: 0;
+	margin: 0;
+	margin: auto;
+	padding-top: 40vh;
+}
+
+h2.bio-title {
+	padding: 20px 0;
+	font-size: 2.5em;
+	font-weight: lighter;
+}
+
+h3.sub-title {
+	padding-top: 20px;
+}
+
+.bio-container p {
+	font-weight: lighter;
+	font-size: 1.05em;
+}
+
+.bio-page a {
+	font-weight: bold;
+	text-decoration: underline !important;
+	color: rgb(123,165,199);
+}
+
+.bio-page a:hover {
+	color: purple;
+}

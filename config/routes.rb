@@ -2,15 +2,12 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get 'welcome/projects'
-
-
+  get '/bio' => "welcome#bio"
   get 'welcome/mail'
+
   resources :contacts, only: [:new, :create]
-  
 
   resources :comments, only: [:create, :show]
-  
-
 
   resources :blogs, only: [:index]
   get '/blogs/all' => 'blogs#all'

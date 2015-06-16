@@ -7,7 +7,7 @@ $(document).ready(function(){
     event.preventDefault();
 
     var divToScrollTo = $(this).attr("href");
-    console.log($(divToScrollTo).offset().top);
+    // console.log($(divToScrollTo).offset().top);
       $('html, body').animate({
           scrollTop: $(divToScrollTo).offset().top
       }, 600);
