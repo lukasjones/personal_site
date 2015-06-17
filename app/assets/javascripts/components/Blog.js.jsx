@@ -119,9 +119,35 @@ var Comment = React.createClass({
 
 
 var CommentForm = React.createClass({
+	handleSubmit: function(e){
+		e.preventDefault();
+		var formData = $(this).serialize();
+		$.ajax({
+			url: "#",
+			type: "post",
+			data: formData,
+			success: function(comment){
+				console.log("comment submited to the database");
+				console.log(comment);
+			}.bind(this),
+			error: function(){
+				console.log("Comment not submited to the database");
+			}
+
+		})
+	},
 	render: function(){
 		return (
-			<div></div>
+			<div>
+				<img src="/assets/user-icon" alt="User Image" />
+				<form className="comment-form" onSubmit={this.handleSubmit}>
+					<input type="text" name="name" placeholder="Name (optional)" />
+					<textarea name="content" placeholder="Write your comment here">
+					</textarea>
+					<input type="submit" value="Comment!" />
+
+				</form>
+			</div>
 
 		);
 	}
