@@ -7,8 +7,9 @@ var Blog = React.createClass({
 			url: "/blogs/all",
 			type: "get",
 			dataType: 'json',
-			success: function(blogs) {
-				this.setState({blogs: blogs, currentBlogId: blogs.length-1});
+			success: function(blogsObject) {
+				// [{blog: blog, comments: comments}]
+				this.setState({blogsObject: blogsObject, currentBlogId: blogsObject.length-1});
 			}.bind(this),
 			error: function(data){
 				console.log("didn't work");
@@ -16,98 +17,35 @@ var Blog = React.createClass({
 		});
 	},
 	getInitialState: function(){
-		return {blogs: [], currentBlogId: null}
+		return {blogsObject: [], currentBlogId: null}
 	},
 	componentDidMount: function(){
 		this.loadBlogs();
 	},
 	render: function(){
 		var self = this;
-		var blogs = this.state.blogs;
-		console.log(this.state.blogs);
+		var blogs = this.state.blogsObject.map(function(blogObject){ return blogObject["blog"]});
+		// console.log(this.state.blogs);
 
 		return (
 			<div className="wrap">
 				<div id="layout">
 					<div id="main">
-							<NavBar blogSelf={self} blogs={this.state.blogs} currentBlogId={this.state.currentBlogId}/>
+							<NavBar blogSelf={self} blogs={blogs} currentBlogId={this.state.currentBlogId}/>
 					</div>
 				</div>
 
 				<div id="layout">
 					<div id="main">
-							<BlogPost blogs={this.state.blogs} currentBlogId={this.state.currentBlogId} />
-							<CommentList currentBlogId={this.state.currentBlogId} />
+							<BlogPost blogs={blogs} currentBlogId={this.state.currentBlogId} />
+							<CommentForm blogSelf={self} />
+							<CommentList currentBlogId={this.state.currentBlogId} blogsObject={this.state.blogsObject}/>
 					</div>
 				</div>
 			</div>
 		);
 	}
 });
-
-var NavBar = React.createClass({
-	render: function(){
-		var currentBlogId = this.props.currentBlogId;
-		var blogSelf = this.props.blogSelf;
-		return (
-			<div>
-				<a href="#menu" id="menuLink" className="menu-link">
-			    <span></span>
-				</a>
-
-				<div id="menu">
-		    <div className="pure-menu">
-		        <a className="pure-menu-heading" href="/">Home</a>
-
-		        <ul className="pure-menu-list">
-		        		{
-		        			this.props.blogs.map(function(blog){
-			        			if (currentBlogId !== null) {
-			        				if ((blog.id - 1) === currentBlogId) {
-			        					return (
-			        						<SelectedNavItem href={blog.id}>{blog.title}</SelectedNavItem>
-			        					)
-			        				} else {
-				        				return (
-				        					<NavItem blogSelf={blogSelf} href={blog.id}>{blog.title}</NavItem>
-				        				);
-			        				}
-				        		} 
-		        			})
-		        		}
-		        </ul>
-			    </div>
-				</div>
-			</div>
-		);
-	}
-});
-
-var NavItem = React.createClass({
-	changeBlog: function(event){
-		event.preventDefault();
-		this.props.blogSelf.changeBlog(this.props.href - 1);
-	},
-	render: function(){
-		return (
-			<li className="pure-menu-item"><a href={this.props.href} onClick={this.changeBlog} className="pure-menu-link">{this.props.children}</a></li>
-		)
-	}
-})
-
-var SelectedNavItem = React.createClass({
-	doNothing: function(event){
-		event.preventDefault();
-		console.log('that\'s the current blog nard');
-	},
-	render: function(){
-		return (
-			<li className="pure-menu-item" className="menu-item-divided pure-menu-selected">
-			    <a href={this.props.href} onClick={this.doNothing} className="pure-menu-link">{this.props.children}</a>
-			</li>
-		)
-	}
-})
 
 
 
@@ -123,7 +61,7 @@ var BlogPost = React.createClass({
 				// <h1 className="blog-title">{this.props.title}</h1>
 				// <span className="blog-date">{this.props.date}</span>
 				// <p className="blog-content">{this.props.content}</p>
-				<div id="main">
+				<div>
 				  <div className="header">
 		        <h1>{title}</h1>
 		        <h2>{date}</h2>
@@ -141,33 +79,20 @@ var BlogPost = React.createClass({
 
 
 var CommentList = React.createClass({
-	getComments: function(){
-		if (this.props.currentBlogId !== null) {
-			var url = "/comments/" + this.props.currentBlogId
-			$.ajax({
-				url: url,
-				type: "get",
-				dataType: "json",
-				success: function(comments){
-					console.log("successfully retrieved comments");
-					this.setState({currentBlogComments: comments});
-				},
-				error: function(){
-					console.log("failed to get comments");
-				}
-			})
-		}
-	},
-	getInitialState: function(){
-		return {currentBlogComments: []};
-	},
-	componentDidMount: function(){
-		this.getComments();
-	},
 	render: function(){
+		var comments = "hey ya"
+		if (this.props.currentBlogId !== null) {
+			comments = this.props.blogsObject[this.props.currentBlogId]["comments"];
+			comments = comments.map(function(comment){
+				var date = comment.created_at.match(/\d{4}-\d{2}-\d{2}/).join("");
+				return <Comment name={comment.name} content={comment.content} date={date} />
+			})
+			console.log(comments);
+		}
 		return (
-			<div></div>
-
+			<div className="commentList content">
+				{comments}
+			</div>
 		);
 	}
 });
@@ -177,7 +102,15 @@ var CommentList = React.createClass({
 var Comment = React.createClass({
 	render: function(){
 		return (
-			<div></div>
+			<div className="comment">
+				<div className="comment-wrap">
+					<img src="/assets/user-icon" alt="User Image" />
+				</div>
+				<div className="comment-wrap-wrap">
+					<div className="comment-head">{this.props.name} &bull; {this.props.date}</div>
+					<p className="content">{this.props.content}</p>
+				</div>					
+			</div>
 
 		);
 	}

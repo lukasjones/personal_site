@@ -2,9 +2,56 @@
     color: #777;
 }*/
 
-.pure-img-responsive {
-    max-width: 100%;
+
+.comment {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  margin: 10px 0;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.comment div {
+  display: inline-block;
+}
+
+.comment img {
+    width: 100%;
+    height: 100%;
+}
+
+.comment .content {
+  margin: 0;
+  padding: 0;
+}
+
+.comment-head {
+    padding-bottom: 0px;
+    font-size: 1.05em;
+}
+
+
+
+.comment-wrap {
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 70px;
+    line-height: 0;
+}
+
+.comment-wrap-wrap {
+    padding-left: 6px;
     height: auto;
+}
+
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
 }
 
 /*
