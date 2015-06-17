@@ -38,7 +38,7 @@ var Blog = React.createClass({
 				<div id="layout">
 					<div id="main">
 							<BlogPost blogs={blogs} currentBlogId={this.state.currentBlogId} />
-							<CommentForm blogSelf={self} />
+							<CommentForm blogSelf={self} currentBlogId={this.state.currentBlogId} />
 							<CommentList currentBlogId={this.state.currentBlogId} blogsObject={this.state.blogsObject}/>
 					</div>
 				</div>
@@ -82,7 +82,7 @@ var CommentList = React.createClass({
 	render: function(){
 		var comments = "hey ya"
 		if (this.props.currentBlogId !== null) {
-			comments = this.props.blogsObject[this.props.currentBlogId]["comments"];
+			comments = this.props.blogsObject[this.props.currentBlogId]["comments"].reverse();
 			comments = comments.map(function(comment){
 				var date = comment.created_at.match(/\d{4}-\d{2}-\d{2}/).join("");
 				return <Comment name={comment.name} content={comment.content} date={date} />
@@ -121,9 +121,11 @@ var Comment = React.createClass({
 var CommentForm = React.createClass({
 	handleSubmit: function(e){
 		e.preventDefault();
-		var formData = $(this).serialize();
+		var formData = $(".comment-form").serialize();
+		console.log(formData);
+		console.log("################################");
 		$.ajax({
-			url: "#",
+			url: "/comments",
 			type: "post",
 			data: formData,
 			success: function(comment){
@@ -141,9 +143,10 @@ var CommentForm = React.createClass({
 			<div>
 				<img src="/assets/user-icon" alt="User Image" />
 				<form className="comment-form" onSubmit={this.handleSubmit}>
-					<input type="text" name="name" placeholder="Name (optional)" />
-					<textarea name="content" placeholder="Write your comment here">
+					<input type="text" name="comment[name]" placeholder="Name (optional)" />
+					<textarea name="comment[content]" placeholder="Write your comment here">
 					</textarea>
+					<input type="hidden" name="comment[blog_id]" value={this.props.currentBlogId + 1} />
 					<input type="submit" value="Comment!" />
 
 				</form>

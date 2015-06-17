@@ -6,13 +6,18 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(name: params[:comment][:name], content: params[:comment][:content], blog_id: session[:blog_id])
+    p params
+    p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    comment = Comment.new(
+      name: params[:comment][:name], 
+      content: params[:comment][:content], 
+      blog_id: params[:comment][:blog_id]
+      )
 
     if comment.save
-      render partial: "blogs/comment", locals: {comment: comment}
+      render json: comment
     else
-      p "fail"
-      redirect_to blogs_path
+      "didn't work"
     end
 
   end
