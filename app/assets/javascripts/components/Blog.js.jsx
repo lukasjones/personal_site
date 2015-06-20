@@ -102,6 +102,7 @@ var CommentList = React.createClass({
 var Comment = React.createClass({
 	render: function(){
 		return (
+
 			<div className="comment">
 				<div className="comment-wrap">
 					<img src="/assets/user-icon" alt="User Image" />
@@ -140,16 +141,21 @@ var CommentForm = React.createClass({
 	},
 	render: function(){
 		return (
-			<div>
-				<img src="/assets/user-icon" alt="User Image" />
-				<form className="comment-form" onSubmit={this.handleSubmit}>
-					<input type="text" name="comment[name]" placeholder="Name (optional)" />
-					<textarea name="comment[content]" placeholder="Write your comment here">
-					</textarea>
-					<input type="hidden" name="comment[blog_id]" value={this.props.currentBlogId + 1} />
-					<input type="submit" value="Comment!" />
-
-				</form>
+			<div className="content">
+				<div className="comment-form-div">
+					<div className="comment-form-image-wrap">
+						<img src="/assets/user-icon" alt="User Image" />
+					</div>
+					<div className="comment-form-wrap">
+						<form className="comment-form" onSubmit={this.handleSubmit}>
+							<input type="text" name="comment[name]" placeholder="Name (optional)" />
+							<textarea name="comment[content]" placeholder="Write your comment here">
+							</textarea>
+							<input type="hidden" name="comment[blog_id]" value={this.props.currentBlogId + 1} />
+							<input type="submit" value="Comment!" />
+						</form>
+					</div>
+				</div>
 			</div>
 
 		);
