@@ -39,7 +39,7 @@ var Blog = React.createClass({
 					<div id="main">
 							<BlogPost blogs={blogs} currentBlogId={this.state.currentBlogId} />
 							<CommentForm blogSelf={self} currentBlogId={this.state.currentBlogId} />
-							<CommentList currentBlogId={this.state.currentBlogId} blogsObject={this.state.blogsObject}/>
+							<CommentList blogSelf={self} currentBlogId={this.state.currentBlogId} blogsObject={this.state.blogsObject}/>
 					</div>
 				</div>
 			</div>
@@ -132,6 +132,7 @@ var CommentForm = React.createClass({
 			success: function(comment){
 				console.log("comment submited to the database");
 				console.log(comment);
+				this.props.blogSelf.loadBlogs();
 			}.bind(this),
 			error: function(){
 				console.log("Comment not submited to the database");
@@ -152,7 +153,7 @@ var CommentForm = React.createClass({
 					<div className="comment-form-wrap">
 						<form className="comment-form" onSubmit={this.handleSubmit}>
 							<input type="text" name="comment[name]" placeholder="Name (optional)" />
-							<textarea id="textarea" cols="40" rows="5" name="comment[content]" placeholder="Write your comment here">
+							<textarea id="textarea" cols="40" rows="3" name="comment[content]" placeholder="Write your comment here">
 							</textarea>
 							<input type="hidden" name="comment[blog_id]" value={this.props.currentBlogId + 1} />
 							<input className="comment-submit" type="submit" value="Comment!" />
