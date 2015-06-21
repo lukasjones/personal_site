@@ -125,6 +125,10 @@ var CommentForm = React.createClass({
 		var formData = $(".comment-form").serialize();
 		console.log(formData);
 		console.log("################################");
+
+		$("input[type='text']").val("");
+		$("textarea").val("");
+
 		$.ajax({
 			url: "/comments",
 			type: "post",
