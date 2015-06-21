@@ -76,20 +76,27 @@ header {
 }
 
 .horizontal-nav {
+  position: fixed;
+  z-index: 1000000000000;
+  top: 0;
+  width: 100%;
   text-align: center;
+  background: rgba(119,113,111,0.5);
 }
 
 .horizontal-nav li {
   display: inline-block;
-  padding: 20px;
 }
 
 .horizontal-nav li a {
+  display: inline-block;
   color: white;
+  padding: 20px;
 }
 
 .horizontal-nav li a:hover {
   color: gray;
+  background: white;
 }
 
 .opener-overlay {
@@ -107,7 +114,7 @@ h1.name {
   color: white;
   /*color: rgb(123,165,199);*/
   font-weight: lighter;
-  text-shadow: 5px 0 rgb(119,113,111), 0 1px rgb(119,113,111), 1px 0 rgb(119,113,111), 0 -1px rgb(119,113,111);
+  text-shadow: 5px 5px 3px rgb(119,113,111);
 
 }
 
@@ -115,7 +122,8 @@ h4.title {
   font-size: 2em;
   color: white;
   font-weight: lighter;
-  text-shadow: 5px 0 rgb(119,113,111), 0 1px rgb(119,113,111), 1px 0 rgb(119,113,111), 0 -1px rgb(119,113,111);
+  text-shadow: 5px 5px 3px rgb(119,113,111);
+  /*text-shadow: 5px 0   rgb(119,113,111), 0 1px rgb(119,113,111), 1px 0 rgb(119,113,111), 0 -1px rgb(119,113,111);*/
 
 }
 
