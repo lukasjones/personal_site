@@ -1,4 +1,8 @@
-<%= react_component("Blog") %>
+<% signed_in = false %>
+<% if session[:id] %>
+<% signed_in = true %>
+<% end %>
+<%= react_component("Blog", {signedIn: signed_in})  %>
 
 
 

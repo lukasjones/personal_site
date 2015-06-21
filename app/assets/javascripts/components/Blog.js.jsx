@@ -39,7 +39,7 @@ var Blog = React.createClass({
 					<div id="main">
 							<BlogPost blogs={blogs} currentBlogId={this.state.currentBlogId} />
 							<CommentForm blogSelf={self} currentBlogId={this.state.currentBlogId} />
-							<CommentList blogSelf={self} currentBlogId={this.state.currentBlogId} blogsObject={this.state.blogsObject}/>
+							<CommentList blogSelf={self} currentBlogId={this.state.currentBlogId} blogsObject={this.state.blogsObject} signedIn={this.props.signedIn} />
 					</div>
 				</div>
 			</div>
