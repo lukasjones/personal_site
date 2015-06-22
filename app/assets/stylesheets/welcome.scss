@@ -5,6 +5,9 @@
 /************GENERAL STYLES*******************/
 
 
+$ghost-button-hover-color: rgba(255,237,167,0.9);
+$ghost-button-border-color: rgb(255,237,167);
+$ghost-button-text-color: rgb(255,237,167);
 
 
 ul {
@@ -44,20 +47,20 @@ img.nav-circle:hover {
 .ghost-button {
   font-size: 1.4em;
   background: transparent;
-  border: 1px solid #325BB3;
+  border: 1px solid $ghost-button-border-color;
   border-radius: 8px;
   margin-top: 40vh;
   width: 200px;
   height: 75px;
   /*background: rgba(119,113,111,0.4);*/
-  color: #325BB3;
+  color: $ghost-button-text-color;
   -webkit-transition: background 0.75s, color 0.75s;
   transition: background 0.75s, color 0.75s;
 }
 
 .ghost-button:hover {
-  background: rgba(50,91,179,0.8);
-  color: white;
+  background: $ghost-button-hover-color;
+  color: black;
 }
 
 /*************PICTURE SECTION STYLES****************/
@@ -240,7 +243,7 @@ section#blog {
 
 section#contact {
   position: absolute;
-  background: white;
+  background: rgb(123,165,199);
   height: 60vh;
   width: 100%;
 }
@@ -272,13 +275,28 @@ input.mail-submit {
   padding: 10px;
   margin: 10px;
   background: transparent;
+  background: white;
   border: 1px solid grey;
   border-radius: 4px;
+  -webkit-transition: background 0.75s;
+  transition: background 0.75s;
+}
+
+input.mail-submit:hover {
+  background: $ghost-button-hover-color;
 }
 
 
 
 /* phone size */ 
+
+@media (max-width: 501px) {
+  .horizontal-nav li a {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 
 @media (max-width: 400px) {
@@ -289,10 +307,14 @@ input.mail-submit {
     font-size: 1.1em;
   }
   
-  .horizontal-nav li {
-    padding: 10px;
-    font-size: 14px;
+ 
+
+  .horizontal-nav li a {
+    padding-left: 4px;
+    padding-right: 4px;
   }
+
+
 
   input.email-text, textarea.content-text, input.mail-submit {
     margin: 2px;
