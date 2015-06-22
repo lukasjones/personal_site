@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   def index
+    @disable_nav = true;
+    @disable_footer = true;
   end
 
   def show

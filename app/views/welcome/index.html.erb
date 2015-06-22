@@ -1,12 +1,4 @@
 
-<nav class="horizontal-nav">
-  <ul>
-    <li><a href="#bio" class="scroll">About Me</a></li>
-    <li><a href="#portfolio" class="scroll">Portfolio</a></li>
-    <li><a href="#blog" class="scroll">Blog</a></li>
-    <li><a href="#contact" class="scroll">Contact Me</a></li>
-  </ul>
-</nav>
 <header>
   <div class="opener-overlay">
 
@@ -80,18 +72,7 @@
   
 </section>
 
-<section id="contact">
 
-    <button class="ghost-button contact-button">
-      Say Hi!
-    </button>
-    <%= form_for @contact, :html => {:class => "contact-form"} do |f| %>
-        <%= f.text_field :email, :class => "email-text", :placeholder => "Your Email" %>
-        <%= f.text_area :content, :class => "content-text", :rows => '7', :placeholder => "Say hello!" %>
-        <%= f.submit "submit", :class => "mail-submit" %>
-    <% end %>
-
-</section>
 
 
 

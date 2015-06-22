@@ -16,8 +16,11 @@
 <body>
 
 
+<%= render 'layouts/navbar' unless @disable_nav %>
 
 <%= yield %>
+
+<%= render 'layouts/footer' unless @disable_footer %>
 
 
 </body>

@@ -1,15 +1,20 @@
 class WelcomeController < ApplicationController
+
+	before_action :set_contact
+
   def index
-    @contact = Contact.new
-    @recent_blog_post = Blog.last
   end
 
   def projects
-
   end
 
   def bio
   end
 
+  private
+
+  def set_contact
+  	@contact = Contact.new
+  end
 
 end
