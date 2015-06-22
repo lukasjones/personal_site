@@ -1,0 +1,15 @@
+<section id="contact">
+
+    <button class="ghost-button contact-button">
+      Say Hi!
+    </button>
+    <%= form_for @contact, :html => {:class => "contact-form"} do |f| %>
+        <%= f.text_field :email, :class => "email-text", :placeholder => "Your Email" %>
+        <%= f.text_area :content, :class => "content-text", :rows => '7', :placeholder => "Say hello!" %>
+        <%= f.submit "submit", :class => "mail-submit" %>
+    <% end %>
+
+		<!-- <footer>
+		 copyright Lukas Jones
+		</footer> -->
+</section>
